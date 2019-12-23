@@ -210,8 +210,14 @@ def interface_cookie_session():
     return "cookie_session"
 
 
+# template
+@app.route("/template")
+def interface_template():
+    return "template"
+
+
 """
-    【接口】
+    【启动】
 """
 if __name__ == '__main__':
     HOST = "127.0.0.1"
