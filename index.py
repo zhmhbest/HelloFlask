@@ -232,5 +232,4 @@ if __name__ == '__main__':
     print()
 
     # 启动应用
-    # app.run()
     app.run(host=HOST, port=PORT)
