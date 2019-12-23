@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 
 """
@@ -30,6 +31,8 @@ app = Flask(__name__)
 #     )
 # )
 app.config['DEBUG'] = True
+app.config['SESSION_TYPE'] = 'filesystem'
+app.config['SECRET_KEY'] = os.urandom(24)
 app.config['KEY_TEST'] = "ABC_"
 
 """
@@ -204,16 +207,63 @@ def interface_request():
     return json.dumps(msg), 200, {'Content-Type': 'text/json'}
 
 
-# cookie_session
-@app.route("/cookie_session")
-def interface_cookie_session():
-    return "cookie_session"
+# cookie
+@app.route("/cookie")
+def interface_cookie():
+    def get_current_time_string():
+        import time
+        return time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+    # end def
+
+    def get_current_cookies_string():
+        import json
+        from flask import request
+        return json.dumps(request.cookies)
+    # end def
+
+    from flask import make_response
+    response = make_response(get_current_cookies_string())
+    response.headers['Content-Type'] = 'text/json'
+    #
+    response.set_cookie('cookie_last', get_current_time_string())
+    return response
+
+
+# session
+@app.route("/session")
+def interface_session():
+    def get_current_time_string():
+        import time
+        return time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+    # end def
+
+    def get_current_sessions_string(sess):
+        import json
+        return json.dumps(dict(sess))
+    # end def
+
+    from flask import session
+    from flask import make_response
+    response = make_response(get_current_sessions_string(session))
+    response.headers['Content-Type'] = 'text/json'
+    #
+    session['session_last'] = get_current_time_string()
+    return response
 
 
 # template
 @app.route("/template")
 def interface_template():
-    return "template"
+    from flask import render_template
+    data = {
+        'title': "Hello Template",
+        'test_list': ['a', 'b', 'c'],
+        'test_dict': {
+            'key1': 'val1',
+            'key2': 'val2',
+        }
+    }
+    return render_template("template1.html", **data)
 
 
 """
