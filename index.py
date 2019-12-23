@@ -193,16 +193,21 @@ def interface_request():
     # werkzeug.datastructures.ImmutableTypeConversionDict   request.cookies
     # werkzeug.datastructures.EnvironHeaders                request.headers
     # werkzeug.datastructures.attach_enctype_error_multidict.<locals>.newcls    request.files
-    print(request.headers.items())
     msg = {
         'method': request.method,
         'data': str(request.data, encoding="utf-8"),
         'args': request.args,
         'form': request.form,
         'cookies': request.cookies,
-        # 'headers': ,
+        'headers': dict(request.headers),
     }
     return json.dumps(msg), 200, {'Content-Type': 'text/json'}
+
+
+# cookie_session
+@app.route("/cookie_session")
+def interface_cookie_session():
+    return "cookie_session"
 
 
 """
