@@ -162,24 +162,18 @@ def interface_abort():
 @app.route("/response1")
 def interface_response1():
     from flask import make_response, Response
-    import json
     # response = Response()
-    response = make_response(json.dumps({
-        'Response': 'Response'
-    }))
+    response = make_response("<h1>Response1</h1>")
     response.status = "200"
-    response.headers['Content-Type'] = 'text/json'
+    response.headers['Content-Type'] = 'text/html'
     return response
 
 
 # response2
 @app.route("/response2")
 def interface_response2():
-    import json
-    return json.dumps({
-        'Response': 'Tuple'
-    }), 200, {
-        'Content-Type': 'text/json'
+    return "<h1>Response2</h1>", 200, {
+        'Content-Type': 'text/html'
     }
 
 
