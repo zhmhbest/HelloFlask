@@ -6,10 +6,22 @@
 
 ## [Index](./index.py)
 
-- 请求方式
-- URL匹配
-- 重定向
+- Config
+- Methods
+- URL match
+- Redirect
+- Error Page
+- Response
 - Cookie
 - Session
 - Template
 - 静态解析
+
+## [Model](./model.py)
+
+```bash
+pip install flask-sqlalchemy
+pip install flask-mysqldb
+```
+
+- 操作数据库
