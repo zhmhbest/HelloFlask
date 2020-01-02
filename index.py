@@ -8,11 +8,6 @@ app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SECRET_KEY'] = os.urandom(24)
 
 
-"""
-    【接口】
-"""
-
-
 @app.route("/hello")
 def interface_hello():
     return "Hello"

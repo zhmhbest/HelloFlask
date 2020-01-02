@@ -1,4 +1,4 @@
-from flask import Flask, redirect
+from flask import Flask
 
 app = Flask(
     __name__,
@@ -9,6 +9,7 @@ app = Flask(
 
 @app.route("/")
 def index():
+    from flask import redirect
     return redirect("/static_pages/index.html")
 
 
