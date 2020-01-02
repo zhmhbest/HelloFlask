@@ -12,8 +12,7 @@
 
 - Methods
 - Redirect
-- Cookie
-- Session
+- url_for
 - url_map
 - Host: Port
 
