@@ -3,7 +3,7 @@ from flask import render_template
 
 app = Flask(
     __name__,
-    template_folder="templates"  # 模板文件所在目录
+    template_folder="templates"  # 模板文件所在目录（默认为templates）
 )
 
 
