@@ -1,39 +1,12 @@
 import os
 from flask import Flask
 
-"""
-    【初始化App】
-    以模块__name__所在目录为启动目录
-    静态目录：默认为启动目录下的static目录
-    模板目录：默认为启动目录下的templates目录
-    app = Flask(
-        __name__,
-        static_folder="static",
-        static_url_path="/static",
-        template_folder="templates"
-    )
-
-"""
 app = Flask(__name__)
 
-"""
-    【配置文件】
-"""
-
-# app.config.from_json("config.json")
-# app.config.from_pyfile("config.py")
-# app.config.from_object(
-#     type("", (), {
-#         '__init__': (lambda self, **kwargs: self.__dict__.update(kwargs)),
-#         '__eq__': (lambda self, other: self.__dict__ == other.__dict__)
-#     })(
-#         DEBUG=True,
-#     )
-# )
 app.config['DEBUG'] = True
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SECRET_KEY'] = os.urandom(24)
-app.config['KEY_TEST'] = "ABC_"
+
 
 """
     【接口】
@@ -43,13 +16,6 @@ app.config['KEY_TEST'] = "ABC_"
 @app.route("/hello")
 def interface_hello():
     return "Hello"
-
-
-# 读取配置文件
-@app.route("/read_config")
-def interface_config():
-    from flask import current_app
-    return str(app.config.get('KEY_TEST')) + str(current_app.config.get('KEY_TEST'))
 
 
 # 同一个URL地址，根据请求方式决定方法
@@ -77,19 +43,6 @@ def interface_de_method():
 def interface_redirect():
     from flask import redirect
     return redirect("/hello")
-
-
-# error
-@app.errorhandler(500)
-def on_error_500_message(err):
-    return "自定义500错误信息：%s" % err
-
-
-# abort-error
-@app.route("/abort")
-def interface_abort():
-    from flask import abort
-    abort(500)
 
 
 # response1
