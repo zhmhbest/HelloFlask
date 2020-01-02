@@ -36,7 +36,7 @@
 
 ## [Template](./demo_template.py)
 
-- 模板使用
+- 使用模板
 
 ## [Match](./demo_match.py)
 
@@ -44,7 +44,7 @@
 
 ## [Hook](./demo_hook.py)
 
-- 请求捕获
+- 捕获请求
 
 ## [Model](./demo_model.py)
 
