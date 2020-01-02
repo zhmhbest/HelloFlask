@@ -4,10 +4,6 @@
 
 - 最简可运行代码
 
-## [Config](./demo_config.py)
-
-- 设置配置信息
-
 ## [Index](./index.py)
 
 - Methods
@@ -15,6 +11,10 @@
 - url_for
 - url_map
 - Host: Port
+
+## [Config](./demo_config.py)
+
+- 设置配置信息
 
 ## [Request & Response](./demo_request_response.py)
 
