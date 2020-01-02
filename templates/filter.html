@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter Template</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        tr th:nth-child(1) {
+            text-align: right;
+            color: gray;
+        }
+        tr th:nth-child(2) {
+            padding-left: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<h2>String Filter</h2>
+<table><tbody>
+    <tr><th>escape</th><th>{{ escape }}</th></tr>
+    <tr><th>escape | safe</th><th>{{ escape | safe }}</th></tr>
+
+    <tr><th>hello</th><th>{{ hello }}</th></tr>
+    <tr><th>HELLO</th><th>{{ HELLO }}</th></tr>
+    <tr><th>hello | capitalize</th><th>{{ hello | capitalize }}</th></tr>
+    <tr><th>HELLO | capitalize</th><th>{{ HELLO | capitalize }}</th></tr>
+    <tr><th>HELLO | lower</th><th>{{ HELLO | lower }}</th></tr>
+    <tr><th>hello | upper</th><th>{{ hello | upper }}</th></tr>
+
+    <tr><th>i_love_you</th><th>{{ i_love_you }}</th></tr>
+    <tr><th>i_love_you | title</th><th>{{ i_love_you | title }}</th></tr>
+    <tr><th>i_love_you | reverse</th><th>{{ i_love_you | reverse }}</th></tr>
+
+    <tr><th>space</th><th><pre>[{{ space }}]</pre></th></tr>
+    <tr><th>space | trim</th><th><pre>[{{ space | trim }}]</pre></th></tr>
+
+    <tr><th>'PI is %f' | format(PI)</th><th>{{ 'PI is %f' | format(PI) }}</th></tr>
+    <tr><th>'%d + %d = %d' | format(1, 1, 2)</th><th>{{ '%d + %d = %d' | format(1, 1, 2) }}</th></tr>
+</tbody></table>
+<h2>List Filter</h2>
+<table><tbody>
+    <tr><th>test_list</th><th>{{ test_list }}</th></tr>
+    <tr><th>test_list | first</th><th>{{ test_list | first }}</th></tr>
+    <tr><th>test_list | last</th><th>{{ test_list | last }}</th></tr>
+    <tr><th>test_list | length</th><th>{{ test_list | length }}</th></tr>
+    <tr><th>test_list | sum</th><th>{{ test_list | sum }}</th></tr>
+    <tr><th>test_list | sort</th><th>{{ test_list | sort }}</th></tr>
+
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Template</title>
+</head>
+<body>
+    <!-- 直接使用变量 -->
+    <h2>{{ title }}</h2>
+
+    <!-- 列表 -->
+    <h2>List</h2>
+    <ul>
+        <li>{{ test_list[0] }}</li>
+        <li>{{ test_list[1] }}</li>
+        <li>{{ test_list[2] }}</li>
+    </ul>
+
+    <!-- 字典 -->
+    <h2>Dict</h2>
+    <ul>
+        <li>{{ test_dict.key1 }}</li>
+        <li>{{ test_dict['key2'] }}</li>
+    </ul>
+
+    <h2>Calc</h2>
+    <ul>
+        <li>数字运算：{{ a + b }}</li>
+        <li>字符运算：{{ test_list[0] + " " + test_list[1] }}</li>
+    </ul>
+</body>
+</html>
