@@ -13,8 +13,8 @@ class Config:
     SQL_CONFIG = {
         'host': '39.107.96.222',
         'port': '3306',
-        'user': 'wzd',
-        'password': '!@#$%RDX123ad',
+        'user': '',
+        'password': '',
         'database': 'flask',
     }
     # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://<帐号>:<密码>@<HOST>:3306/<数据库名称>'
