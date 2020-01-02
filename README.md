@@ -1,5 +1,9 @@
 # Flask
 
+```bash
+pip install flask==1.0.4
+```
+
 ## [Hello](./hello.py)
 
 - 最简可运行代码
@@ -49,8 +53,8 @@
 ## [Model](./demo_model.py)
 
 ```bash
-pip install flask-sqlalchemy
-pip install flask-mysqldb
+pip install flask-sqlalchemy==2.4.1
+pip install flask-mysqldb==0.2.0
 ```
 
 - 操作数据库
