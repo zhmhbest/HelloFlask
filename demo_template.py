@@ -11,6 +11,7 @@ app = Flask(
 def index():
     return """
     <ul>
+        <li><a href='http://docs.jinkan.org/docs/jinja2/templates.html'>Jinja2帮助文档</a></li>
         <li><a href='./hello'>Hello Template</a></li>
         <li><a href='./filter'>Filter Template</a></li>
     </ul>

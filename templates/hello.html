@@ -15,6 +15,23 @@
         <li>{{ test_list[1] }}</li>
         <li>{{ test_list[2] }}</li>
     </ul>
+    <ul>
+        {% for item in test_list %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for item in test_list2 %}
+            <li>{{ item }}</li>
+        {% else %}
+            <li>空列表</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for i in range(3) %}
+            <li>{{ i }}</li>
+        {% endfor %}
+    </ul>
 
     <!-- 字典 -->
     <h2>Dict</h2>
