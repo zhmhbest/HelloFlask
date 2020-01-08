@@ -336,7 +336,7 @@ def db_while_first_run():
     ])
     db.session.commit()
 
-    # 清楚数据库所有内容
+    # 清除数据库所有内容
     # db.drop_all()
 
 
