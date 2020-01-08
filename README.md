@@ -52,6 +52,8 @@ pip install flask==1.0.4
 
 ## [Model](./demo_model.py)
 
+>[数据库配置](https://github.com/zhmhbest/HelloSQLDB#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%8A%E5%85%B6%E7%AE%A1%E7%90%86%E5%91%98)
+
 ```bash
 pip install flask-sqlalchemy==2.4.1
 pip install flask-mysqldb==0.2.0

@@ -11,11 +11,11 @@ app = Flask(__name__)
 class Config:
     DEBUG = True
     SQL_CONFIG = {
-        'host': '39.107.96.222',
+        'host': 'localhost',
         'port': '3306',
-        'user': '',
-        'password': '',
-        'database': 'flask',
+        'user': 'flask',
+        'password': '1234',
+        'database': 'flaskdb',
     }
     # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://<帐号>:<密码>@<HOST>:3306/<数据库名称>'
     SQLALCHEMY_DATABASE_URI = 'mysql://' + \
