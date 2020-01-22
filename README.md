@@ -60,3 +60,10 @@ pip install flask-mysqldb==0.2.0
 ```
 
 - 操作数据库
+
+## [RESTful](./demo_RESTful.py)
+
+- 配置路由
+- 表单验证
+- 默认返回JSON
+
