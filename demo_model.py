@@ -13,17 +13,16 @@ class Config:
     SQL_CONFIG = {
         'host': 'localhost',
         'port': '3306',
-        'user': 'flask',
-        'password': '1234',
+        'user': 'root',
+        'password': '',
         'database': 'flaskdb',
     }
     # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://<帐号>:<密码>@<HOST>:3306/<数据库名称>'
-    SQLALCHEMY_DATABASE_URI = 'mysql://' + \
-                              SQL_CONFIG['user'] + ':' + \
-                              SQL_CONFIG['password'] + '@' + \
-                              SQL_CONFIG['host'] + ':' + \
-                              SQL_CONFIG['port'] + '/' + \
-                              SQL_CONFIG['database']
+    SQLALCHEMY_DATABASE_URI = 'mysql://%s:%s@%s:%s/%s' % (
+        SQL_CONFIG['user'], SQL_CONFIG['password'],
+        SQL_CONFIG['host'], SQL_CONFIG['port'],
+        SQL_CONFIG['database']
+    )
 
     # 数据被修改时，修改模型类
     SQLALCHEMY_TRACK_MODIFICATIONS = True
