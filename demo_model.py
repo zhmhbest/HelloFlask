@@ -257,6 +257,9 @@ def read_by_id_role():
 
 @app.route("/read_filter_from_user")
 def read_filter_from_user():
+    # from sqlalchemy import and_, or_
+    # filter(and_(条件1, 条件2, ...))
+    # filter(or_(条件1, 条件2, ...))
     dat_all = User.query.filter(User.age == 18)
     buffer = []
     for item in dat_all:
