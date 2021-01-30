@@ -70,4 +70,3 @@ pip install flask-restful==0.3.7
 - 配置路由
 - 表单验证
 - 默认返回JSON
-
